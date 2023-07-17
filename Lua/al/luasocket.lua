@@ -1,5 +1,5 @@
-package.path = package.path..";C:\\Users\\makpu\\Downloads\\proj\\project\\Lua\\modules\\socket\\?.lua"
-package.cpath = package.cpath..";C:\\Users\\makpu\\Downloads\\proj\\project\\Lua\\modules\\socket\\?.dll"
+-- package.path = package.path..";C:\\Users\\makpu\\Downloads\\proj\\project\\Lua\\modules\\socket\\?.lua"
+-- package.cpath = package.cpath..";C:\\Users\\makpu\\Downloads\\proj\\project\\Lua\\modules\\socket\\?.dll"
 
 local socket = require("socket")
 
