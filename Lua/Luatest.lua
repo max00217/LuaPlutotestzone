@@ -6,5 +6,3 @@ num2 = tonumber(io.read())
 
 sum = num1 + num2
 print("Result = " .. sum)
-p = print("Result = " .. sum)
-p(p)
