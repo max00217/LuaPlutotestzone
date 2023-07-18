@@ -19,9 +19,9 @@ end
 
 local server = http.createServer(function (req, res)
     if req.url == '/' then
-        processHtml(script_path .. "index.html", req, res)--script.path.."파일명"으로 경로 지정
+        processHtml(script_path .. "/template/index.html", req, res)--script.path.."파일명"으로 경로 지정
     elseif req.url == '/second.html' then
-        processHtml(script_path .. "second.html", req, res)--script.path.."파일명"으로 경로 지정
+        processHtml(script_path .. "/template/second.html", req, res)--script.path.."파일명"으로 경로 지정
     else
         res:setHeader('Content-Type', 'text/plain')
         res:setHeader('Status', '404 Not Found')
