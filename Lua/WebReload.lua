@@ -28,8 +28,8 @@ local response_code, response_headers, response_status = http.request{
     sink = ltn12.sink.table(response_body)
 }
 
-if response_code == 200 then
-    print("reloaded OK")
+if response_code == 1 then
+    print("Status code: "..response_code.."\nPage Reloaded Successfully") --200
 else
-    print("Got unexpected status code " .. response_code .. ": " .. table.concat(response_body))
+    print("Statis code: "..response_code.."\nCheck >>" .. table.concat(response_body))
 end
