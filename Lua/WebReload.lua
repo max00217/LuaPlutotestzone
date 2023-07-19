@@ -16,7 +16,7 @@ local url = "https://www.pythonanywhere.com/api/v0/user/" .. username .. "/webap
 
 local request_body = ""
 local response_body = {}
-local response_code, response_headers, response_status = http.request{
+local response_code, response_headers, response_status = http.request {
     method = "POST",
     url = url,
     headers = {
@@ -29,7 +29,7 @@ local response_code, response_headers, response_status = http.request{
 }
 
 if response_code == 1 then
-    print("Status code: "..response_code.."\nPage Reloaded Successfully") --200
+    print("Status code: " .. response_code .. "\nPage Reloaded Successfully") --200
 else
-    print("Statis code: "..response_code.."\nCheck >>" .. table.concat(response_body))
+    print("Statis code: " .. response_code .. "\nCheck >>" .. table.concat(response_body))
 end
