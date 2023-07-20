@@ -1,5 +1,6 @@
 #!/usr/bin/env luajit
-package.path = package.path .. ";../?.lua"
+package.path = package.path .. ";./Lua/modules/drawille/?.lua"
+print(package.path)
 local Canvas = require "drawille"
 local curses = require "curses"
 os.setlocale('') -- de_DE.utf-8
@@ -59,7 +60,8 @@ end end
   01234678/0123478 Anti-Conway
   02468/02468 Anti-Copy
   01234678/0123678 Anti 4G3
-]]
+  ]]
+
 
 local cs, cb=arg[1] and arg[1]:match("(%d+)/(%d+)") or "23","3"
 local birth,survive={},{}
