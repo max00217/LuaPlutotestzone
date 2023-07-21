@@ -9,6 +9,7 @@ box:labeltype('shadow')
 button = fl.button(540, 600, 200, 40, "클릭이 가능한 버튼")
 button:callback(function()
   fl.message("뭉탱이로 클릭되다")
+  fl.beep(1)
 end)
 win:done() -- 'end' is a keyword in Lua
 win:show(arg[0], arg)
