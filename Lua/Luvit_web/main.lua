@@ -18,10 +18,10 @@ local function processHtml(file_path, req, res)
 end
 
 local server = http.createServer(function (req, res)
-    if req.url == '/' then
+    if req.url == '/index.html' then
         processHtml(script_path .. "/template/index.html", req, res)--script.path.."파일명"으로 경로 지정
     elseif req.url == '/second.html' then
-        processHtml(script_path .. "/template/second.html", req, res)--script.path.."파일명"으로 경로 지정
+        processHtml(script_path .. "/template/second.html", req, res)
     else
         res:setHeader('Content-Type', 'text/plain')
         res:setHeader('Status', '404 Not Found')
@@ -30,6 +30,6 @@ local server = http.createServer(function (req, res)
 end)
 
 server:listen(8080, "0.0.0.0", function ()
-    print("Server listening at http://0.0.0.0:8080/\nServer listening at http://localhost:8080/")
+    print("Server listening at http://0.0.0.0:8080/\nServer listening at http://localhost:8080/index.html\nServer listening at http://localhost:8080/second.html\n")
     --At desktop, use this link http://121.153.4.209:8080/
 end)
