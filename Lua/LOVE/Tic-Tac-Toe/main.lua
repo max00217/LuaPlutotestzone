@@ -1,13 +1,12 @@
+---@diagnostic disable: undefined-global
 local gridSize = 3
 local cellSize = 190
 local grid = {}
 local clicktime = 0
 local WhoWin = ""
-local Wincheck1 = 0
-local Wincheck2 = 0
 
 function love.load()
-    love.window.setMode(600, 600)
+    love.window.setMode(571, 600)
     love.window.setTitle("오량인의 성능 안 좋은 TicTacToe")
     for row = 1, gridSize do
         grid[row] = {}
@@ -16,10 +15,11 @@ function love.load()
         end
     end
     pause = false
+    local font = love.graphics.newFont("BMDOHYEON.ttf", 200)
+    love.graphics.setFont(font)
 end
 
 function love.update(dt)
-    WinCheck()
     local Draw = true
     if not WinCheck() then
         for i = 1, 3 do
@@ -39,19 +39,23 @@ function love.update(dt)
     if Draw then
         WhoWin = "Draw"
     end
+    if love.keyboard.isDown("r") then
+        love.load()
+    end
 end
 
 function love.mousepressed(x, y, button)
-    if button == 1 then 
+    if x <= gridSize * cellSize and y <= gridSize * cellSize and WhoWin == "" then
         local clickedColumn = math.floor(x / cellSize) + 1
         local clickedRow = math.floor(y / cellSize) + 1
-
-        if grid[clickedRow][clickedColumn] == 0 then 
-            clicktime = clicktime + 1
-            if clicktime % 2 == 1 then
-                grid[clickedRow][clickedColumn] = 1
-            else
-                grid[clickedRow][clickedColumn] = 2
+        if button == 1 then
+            if grid[clickedRow][clickedColumn] == 0 then
+                clicktime = clicktime + 1
+                if clicktime % 2 == 1 then
+                    grid[clickedRow][clickedColumn] = 1
+                else
+                    grid[clickedRow][clickedColumn] = 2
+                end
             end
         end
     end
@@ -68,7 +72,6 @@ function WinCheck()
     (grid[1][1] == 1 and grid[2][2] == 1 and grid[3][3] == 1) or
     (grid[1][3] == 1 and grid[2][2] == 1 and grid[3][1] == 1) then
         WhoWin = "O Wins"
-        Wincheck1 = Wincheck1 + 1
     elseif
     (grid[1][1] == 2 and grid[1][2] == 2 and grid[1][3] == 2) or
     (grid[2][1] == 2 and grid[2][2] == 2 and grid[2][3] == 2) or
@@ -79,7 +82,6 @@ function WinCheck()
     (grid[1][1] == 2 and grid[2][2] == 2 and grid[3][3] == 2) or
     (grid[1][3] == 2 and grid[2][2] == 2 and grid[3][1] == 2) then
         WhoWin = "X Wins"
-        Wincheck2 = Wincheck2 + 1
     end
 end
 
@@ -91,13 +93,12 @@ function love.draw()
             love.graphics.rectangle('line', x, y, cellSize, cellSize)
 
             if grid[row][col] == 1 then                
-                love.graphics.print("O", x + cellSize / 2, y + cellSize / 2)
+                love.graphics.print("O", x + cellSize / 2 - 67, y + cellSize / 2 - 105)
             elseif grid[row][col] == 2 then
-                love.graphics.print("X", x + cellSize / 2, y + cellSize / 2)
+                love.graphics.print("X", x + cellSize / 2 - 67, y + cellSize / 2 - 105)
             end
         end
     end
-    love.graphics.print(WhoWin, 500, 50)
-    love.graphics.print("O : " .. Wincheck1, 500, 100)
-    love.graphics.print("X : " .. Wincheck2, 500, 150)
+    love.graphics.print(WhoWin, 10, 570, 0, 0.1)
+    love.graphics.print("Press R to Restart", 360, 570, 0, 0.1)
 end
