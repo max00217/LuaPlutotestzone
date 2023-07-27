@@ -8,6 +8,7 @@ local WhoWin = ""
 function love.load()
     love.window.setMode(571, 600)
     love.window.setTitle("오량인의 성능 안 좋은 TicTacToe")
+    love.graphics.setBackgroundColor(0.9, 0.8, 0.8)
     for row = 1, gridSize do
         grid[row] = {}
         for col = 1, gridSize do
@@ -41,6 +42,7 @@ function love.update(dt)
     end
     if love.keyboard.isDown("r") then
         love.load()
+        WhoWin = ""
     end
 end
 
