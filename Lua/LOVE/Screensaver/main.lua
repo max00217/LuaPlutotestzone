@@ -1,8 +1,8 @@
-x, y, r = 200, 200, 30
-vx, vy = 10.0, 10.0
-gravity = 0
-speed_scale = 50
-jump_speed = -15
+local x, y, r = 200, 200, 30
+local vx, vy = 10.0, 10.0
+local gravity = 0
+local speed_scale = 50
+local jump_speed = -15
 
 local q = love.math.random()
 local w = love.math.random()
