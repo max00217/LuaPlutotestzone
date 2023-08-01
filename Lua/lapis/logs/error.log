@@ -1,3 +1,6 @@
 2023/08/01 11:20:40 [alert] 42351#42351: lua_code_cache is off; this will hurt performance in /home/minauroht/Downloads/Projects/LuaProject/Lua/lapis/nginx.conf.compiled:20
 2023/08/01 11:21:58 [alert] 43068#43068: lua_code_cache is off; this will hurt performance in /home/minauroht/Downloads/Projects/LuaProject/Lua/lapis/nginx.conf.compiled:20
 2023/08/01 11:22:36 [alert] 43664#43664: lua_code_cache is off; this will hurt performance in /home/minauroht/Downloads/Projects/LuaProject/Lua/lapis/nginx.conf.compiled:20
+2023/08/02 00:09:44 [alert] 73805#73805: lua_code_cache is off; this will hurt performance in /home/minauroht/Downloads/Projects/LuaProject/Lua/lapis/nginx.conf.compiled:20
+2023/08/02 00:10:47 [alert] 74415#74415: lua_code_cache is off; this will hurt performance in /home/minauroht/Downloads/Projects/LuaProject/Lua/lapis/nginx.conf.compiled:20
+2023/08/02 00:11:01 [alert] 74597#74597: lua_code_cache is off; this will hurt performance in /home/minauroht/Downloads/Projects/LuaProject/Lua/lapis/nginx.conf.compiled:20

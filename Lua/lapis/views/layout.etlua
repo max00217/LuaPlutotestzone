@@ -102,7 +102,11 @@
   </style>
 </head>
 <body>
-  <h1>Greetings</h1>
+  <%
+--[[%>
+ <h1>Greetings</h1> 
+<%
+]]%>
   <% content_for("inner") %>
 </body>
 </html>
