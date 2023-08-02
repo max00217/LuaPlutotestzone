@@ -107,6 +107,11 @@
  <h1>Greetings</h1> 
 <%
 ]]%>
+<%
+--[[%>
+ 기본 레이아웃도 세팅 가능함 
+<%
+]]%>
   <% content_for("inner") %>
 </body>
 </html>
